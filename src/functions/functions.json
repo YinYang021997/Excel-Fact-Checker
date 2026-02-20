@@ -1,0 +1,46 @@
+{
+  "functions": [
+    {
+      "id": "FACTCHECK",
+      "name": "FACTCHECK",
+      "description": "Fact-checks a claim using Claude AI. Returns VERIFIED, NOT_VERIFIED, or INCONCLUSIVE.",
+      "result": {
+        "dimensionality": "scalar",
+        "type": "string"
+      },
+      "options": {
+        "stream": false,
+        "requiresAddress": false,
+        "cancelable": false
+      },
+      "parameters": [
+        {
+          "name": "fact",
+          "description": "The claim to verify.",
+          "dimensionality": "scalar",
+          "type": "string"
+        },
+        {
+          "name": "whatItIs",
+          "description": "Context: entity, timeframe, or metric definition.",
+          "dimensionality": "scalar",
+          "type": "string"
+        },
+        {
+          "name": "source",
+          "description": "Domain (e.g. cdc.gov) or full URL. Blank = general knowledge.",
+          "dimensionality": "scalar",
+          "type": "string",
+          "optional": true
+        },
+        {
+          "name": "refreshHours",
+          "description": "Cache TTL in hours. Default 24. Set 0 to always call the API.",
+          "dimensionality": "scalar",
+          "type": "number",
+          "optional": true
+        }
+      ]
+    }
+  ]
+}

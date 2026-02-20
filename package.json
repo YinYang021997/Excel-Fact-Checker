@@ -1,0 +1,32 @@
+{
+  "name": "factcheck-addin",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Excel add-in: FACTCHECK custom function powered by Claude AI",
+  "scripts": {
+    "create-icons": "node create-icons.js",
+    "gen-metadata": "custom-functions-metadata generate --input src/functions/functions.ts --output src/functions/functions.json",
+    "build": "webpack --mode production",
+    "build:dev": "webpack --mode development",
+    "dev-server": "webpack serve --mode development --port 3000",
+    "start": "office-addin-debugging start manifest.xml",
+    "start:desktop": "office-addin-debugging start manifest.xml desktop",
+    "stop": "office-addin-debugging stop manifest.xml",
+    "validate": "office-addin-manifest validate manifest.xml"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@types/office-js": "^1.0.396",
+    "copy-webpack-plugin": "^11.0.0",
+    "custom-functions-metadata": "^2.1.6",
+    "html-webpack-plugin": "^5.5.3",
+    "office-addin-debugging": "^6.0.6",
+    "office-addin-dev-certs": "^2.0.6",
+    "office-addin-manifest": "^2.1.2",
+    "ts-loader": "^9.5.0",
+    "typescript": "^5.3.0",
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1"
+  }
+}
